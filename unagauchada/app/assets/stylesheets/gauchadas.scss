@@ -1,0 +1,127 @@
+// Place all the styles related to the Gauchadas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home_gauchadas {
+	width: 75%;
+	margin: auto;
+}
+.titulo_gauchadas{
+color: #f27321;
+}
+	
+.imagen_gauchadas{
+	float: left;
+	margin-right: 1%
+}
+.descripcion_gauchadas:first-letter{
+	float: left;	
+}
+.clear_gauchadas{
+	clear: both;
+	margin-top: 5% !important;
+}
+.by_autor{
+	text-align: right;
+	
+}
+.by_autor a{
+ color: #f27321 !important ;
+}
+.by_autor a:hover{
+	color: rgba(0, 0, 0, 0.76)	 !important;
+	background-color:  #f27321 !important ;
+}
+
+.link_gauchadas, .btn{
+	clear: both;
+	display: inline-block;
+	color: #fff !important ;
+	margin-left: 0.5%;
+	padding: 1%;
+	background-color: #f27321 !important ;
+	border-radius: 10%;
+	font-size: 10px;
+	text-align: center;
+    min-width: 7% !important;
+}
+
+.link_gauchadas:hover, .btn:hover{
+	background-color:  rgba(0, 0, 0, 0.76)	 !important;
+	color: #f27321 !important ;
+}
+.contenedor_guchada{
+	border: solid 1px #ccc ;
+	padding: 1%;
+	margin-bottom: 3%;
+	box-shadow: 1px 2px 3px 6px;
+	background:#fafafa !important;
+}
+.show_gauchada{
+	width: 40%;
+	margin: auto;
+	margin-top: 20px;
+	border:2px #ccc solid;
+	box-shadow: 1px 2px 3px 5px;
+	padding: 2%;
+	background-color: #fafafa ;
+}
+.title_gauchada{
+
+	text-align: center;
+	margin-bottom: 20px;
+}
+.postulantes_gauchada{
+	text-align: right;
+}
+.imagen_gauchada{
+	margin-bottom: 20px;
+	text-align: center;
+}
+.imagen_gauchadas img {
+	margin-bottom: 16%;
+}
+.descripcion_gauchada{
+	padding: 3%;
+	
+	border: 0.1px solid #ccc;
+}
+.autor_gauchada{
+	text-align: right;
+}
+.home_gauchadas p.descripcion_gauchadas {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.form_order{
+	text-align: left;
+	
+}
+.form_order select, .form_order .filtrar {
+	width: 15%;
+    padding: 1%;
+    background-color: #f27321;
+    color: #fff; 
+}
+.form_order .filtrar{
+		border-radius: 10%;
+		margin-top: 1%;
+
+}
+.form_order .filtrar:hover{
+	background-color:rgba(0, 0, 0, 0.76) ;
+    color: #f27321; 
+}
+/*p.descripcion_gauchadas {
+    
+    overflow: hidden !important;
+    
+    line-height: 1.8em !important;
+    max-height: 3;
+    
+    max-height: 5.6em !important;
+    text-overflow: ellipsis;
+    line-height: 1.8em;
+    word-wrap: break-word;
+} */

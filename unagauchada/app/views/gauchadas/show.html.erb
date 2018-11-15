@@ -1,0 +1,55 @@
+
+<br><br><br>
+<div class="show_gauchada">
+<p class="postulantes_gauchada">
+   <strong>Cantidad de postulantes:</strong>
+   <%= @gauchada.cant_postulantes %>
+</p>
+<h2 class="title_gauchada titulo_gauchadas">
+  <%= @gauchada.title %>
+</h2>
+
+<div class="field imagen_gauchada">
+ <% if @gauchada.cover_file_size.nil? %>
+ <img src="/assets/avatar.png">
+ <% else %>
+ <%= image_tag @gauchada.cover.url('thumb') %>
+ <% end %>
+ </div>
+
+<p class="descripcion_gauchada">
+  <%= @gauchada.descripcion %>
+</p>
+
+
+<div class="fecha_gauchada">
+  <strong>Fecha limite:</strong>
+  <%= @gauchada.fecha_limite %>
+</div>
+
+
+<p class="ciudad_gauchada">
+   <strong>Ciudad:</strong>
+   <%= @gauchada.ciudad %>
+</p>
+<p class="">
+  <strong>Categoria:</strong>
+  <%= @gauchada.categorium.nombre %>
+</p>
+
+
+<%= link_to 'Volver', gauchadas_path, :class => "link_gauchadas" %>
+
+<% if user_signed_in? %>
+  <% if current_user.id == @gauchada.user.id %>
+        <%= link_to 'Editar', edit_gauchada_path(@gauchada), :class => "link_gauchadas" %>
+        <%= link_to 'Eliminar', @gauchada, :class => "link_gauchadas", method: :delete, data: { confirm: '¿Estas seguro?' } %>
+  <%else%>      
+  <%= link_to 'Postularse', {controller:"postularse", action:"new", id_gauchada: @gauchada.id}, :class => "link_gauchadas"%>
+  <% end %>
+<%else%>      
+  <%= link_to 'Postularse', {controller:"postularse", action:"new", id_gauchada: @gauchada.id}, :class => "link_gauchadas"%>
+<% end %>
+<strong><p class="autor_gauchada by_autor">Por: <a  href="#"><%= @gauchada.user.nombre %> <%= @gauchada.user.apellido %></a> </p></strong>
+<p id="notice"><%= notice %></p>
+</div>

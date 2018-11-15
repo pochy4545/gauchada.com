@@ -1,0 +1,21 @@
+
+<br><br><br>
+<div class="form-group" style=" margin-left: 40%; margin-top: 150px;"><p>
+  <strong>Cantidad:</strong>
+  <%= @buy.cantidad %>
+</p>
+
+<p>
+  <strong>Precio total:</strong>
+  <%= @buy.precio_total %>
+</p>
+
+<p>
+  <strong>Precio actual:</strong>
+  <%= @buy.precio_actual %>
+</p>
+<p id="notice"><%= notice %></p>
+<%= link_to 'Nueva Gauchada', '/gauchadas/new', :class => 'link_gauchadas' %>
+<%= link_to 'Volver al inicio', '/', :class => 'link_gauchadas' %>
+</div>
+

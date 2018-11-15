@@ -1,0 +1,2 @@
+class Credito < ApplicationRecord
+end

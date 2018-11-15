@@ -1,0 +1,31 @@
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Title</th>
+      <th>Descripcion</th>
+      <th>Estado</th>
+      <th>Fecha de inicio</th>
+      <th>Fecha limite</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gauchadas.each do |gauchada| %>
+      <tr>
+        <td><%= gauchada.nombre %></td>
+        <td><%= gauchada.title %></td>
+        <td><%= gauchada.descripcion %></td>
+        <td><%= gauchada.estado %></td>
+        <td><%= gauchada.fecha_de_inicio %></td>
+        <td><%= gauchada.fecha_limite %></td>
+        <td><%= link_to 'Show', gauchada %></td>
+        <td><%= link_to 'Edit', edit_gauchada_path(gauchada) %></td>
+        <td><%= link_to 'Destroy', gauchada, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

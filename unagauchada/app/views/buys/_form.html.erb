@@ -1,0 +1,30 @@
+<div class="form-group" id="buy_new" >
+<%= form_for(buy) do |f| %>
+  <% if buy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(buy.errors.count, "error") %> prohibited this buy from being saved:</h2>
+
+      <ul>
+      <% buy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cantidad %>
+    <%= f.number_field :cantidad, :min => 1, :class => '.form-control' %>
+  </div>
+  <div class="field">
+  <%= f.label :numero_de_tarjeta%>
+  <%= f.text_field :numero_de_tarjeta,  :class => '.form-control'%>
+  </div>
+  <div><p><strong>Precio acutal: </strong>$50</p></div>
+  <div class="actions">
+    <%= f.submit 'Realizar Compra', :class => 'btn btn-default' %>
+  </div>
+<% end %>
+<%= link_to 'Volver al inicio', '/', :class => 'link_gauchadas' %>
+<p id="notice"><%= notice %></p>
+</div>

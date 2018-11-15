@@ -1,0 +1,48 @@
+<nav class="navbar navbar-default" id="barra_principal" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse"
+            data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Desplegar navegación</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/"><img src="/assets/avatar.png" style="width:30px;height: 30px;"></a>
+  </div>
+ 
+  <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+       otro elemento que se pueda ocultar al minimizar la barra -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav"> 
+      <li class="dropdown">
+        <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+          <strong>Menú</strong> <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/gauchadas">Todas las Gauchadas</a></li>
+          <li><a href="/buys/new">Comprar crédito</a></li>
+          <li><a href="/gauchadas/new">Nueva gauchada</a></li>
+          
+        </ul>
+      </li>
+    </ul>
+<p class="navbar-text pull-right">
+      <% if user_signed_in? %>
+        <% if current_user.cover_file_size.nil?  %>
+          <img src="/assets/descarga.png" class="foto_menu">
+        <% else %>
+          <%= image_tag current_user.cover.url(:mini), :class => 'foto_menu' %>
+         <% end %>
+        <strong><%= current_user.nombre+" "+current_user.apellido %></strong> <img src="/assets/credito.png"> <strong><%= current_user.creditos %></strong> .
+     <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> | 
+      <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <% else %>
+        <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
+        <%= link_to "Iniciar sesión", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %>
+      </p>
+
+              
+    </div>
+</nav>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  title: MyString
+  descripcion: MyText
+  categoria: MyString
+  estado: MyString
+  fecha_de_inicio: 2017-05-23
+  fecha_limite: 2017-05-23
+
+two:
+  nombre: MyString
+  title: MyString
+  descripcion: MyText
+  categoria: MyString
+  estado: MyString
+  fecha_de_inicio: 2017-05-23
+  fecha_limite: 2017-05-23

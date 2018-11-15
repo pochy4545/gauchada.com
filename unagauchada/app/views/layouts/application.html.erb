@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Unagauchada</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+
+    <%=  render 'menu/menu'  %>
+    <%= yield %>
+    <footer>
+      <img src="/assets/avatar.png">
+      <p><strong>gauchada.com</strong></p> 
+      <p>© 2017 - Todos los derechos reservados</p>   
+    </footer>
+  </body>
+</html>

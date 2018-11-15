@@ -1,0 +1,1 @@
+borrar id_gauchadas en categoria

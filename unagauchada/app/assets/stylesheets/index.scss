@@ -1,0 +1,79 @@
+// Place all the styles related to the index controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#portada{
+	background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1R6r1K4D6aOHrBnErUXtJdeyntw6925wyNDdtA6q6aBBtWl5yeg");
+	background-size:100%;
+	background-repeat: no-repeat;
+}
+#titulo_inicio{
+	text-align: center;
+}
+#portada img{
+	width: 100%
+}
+#barra_principal{
+	width:100%;
+	background-color: rgba(0, 0, 0, 0.76); 
+	position: fixed;
+	border: none;
+
+}
+#barra_principal *  {
+	color: #f27321 !important;
+
+}
+.dropdown-menu :hover{
+background-color: transparent;
+font-weight: bold !important;
+}
+
+.dropdown-menu{
+	background-color: rgba(0, 0, 0, 0.76) !important;
+	border: none !important	
+}
+.titulos_sesion{
+display:block;
+margin:auto;
+margin-top:  20px;
+text-align: center;
+
+}
+.titulos_gauchadas{
+
+	margin: 0px auto 10px auto !important;
+}
+body {
+    background-color: #fafafa;
+    background: url("/assets/fondoo.jpg")  !important ;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100% !important;
+}  
+footer { text-align: center; 
+         margin-top: 8em; 
+         background-color: #D8D8D8; 
+         padding-bottom: 2em; 
+         color: #848484; 
+         font-size: 1em }
+
+footer img { float: center; 
+             position: relative; 
+             margin-top: -4.2em
+}
+.filters{
+	margin-bottom: 5%;
+}
+.contenedor_guchada{
+	clear: both;
+}
+#notice{
+	text-align: center;
+	margin: 2%;
+	padding: 1%;
+	
+}

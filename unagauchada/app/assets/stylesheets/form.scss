@@ -1,0 +1,39 @@
+// Place all the styles related to the categoria controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.form-group{
+	display: inline-block;
+	margin: auto;
+	border: solid #ccc 2px;
+	padding: 3%;
+	box-shadow: 1px 2px 4px 6px;
+}
+#buy_new{
+	margin-top: 10%;
+	margin-left: 34%;
+
+}
+#show_gauchadas{
+
+	margin-left: 34%;
+}
+/*.btn{
+
+	background-color: buttonface !important;
+}
+.btn:hover{
+
+	background-color: transparent !important;
+}*/
+#iniciar_sesion, #nueva_postulacion, #id_registrarse {
+	margin-top: 5%;
+	margin-left: 40%;
+
+
+}
+#id_editar {
+	margin-top: 5%;
+	margin-left: 30%;
+
+
+}

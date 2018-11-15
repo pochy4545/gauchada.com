@@ -1,0 +1,14 @@
+<div class="form-group" id="nueva_postulacion">
+<%= form_for(postularse, :url => {:action => "create"}) do |f| %>
+  <div class="field">
+    <%= f.label 'Descripción' %> <br>
+    <%= f.text_area :descripcion, :required => true, :class  => 'form_control', :cols => 25, :rows => 7 %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Postularse',  :class => 'btn btn-default'%>
+  </div>
+  <div class="id_gauchada" style='display:none'>
+  	<%= f.text_area :gauchada_id, :value => @id_gauchada %>
+  </div>
+<% end %>
+</div>

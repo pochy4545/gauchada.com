@@ -1,0 +1,96 @@
+<div class="filters">
+<p id="notice" ><%= notice %></p>
+<div id="container" >
+
+<form role="search" method="get" id="searchform" action="/gauchadas" >
+  <label for="s">
+    <i class="icon-search"></i>
+  </label>
+  <input type="text" value="<%=@busqueda%>" placeholder="Buscar" class="" name="searchbox" id="s" />
+
+</form>
+</div>
+  <% if @gauchadas.empty?%>
+  <%= "No hay resultados" %>
+  <%end%>
+  </div>
+      <form action="/gauchadas" class="form_order" method="get"> 
+        <SELECT NAME="selecion">
+        <%if @selecion=="title" %> 
+           <OPTION VALUE="title"selected>Titulo</OPTION> 
+        <%else%>
+           <OPTION VALUE="title">Titulo</OPTION>
+          <%end%>
+        <%if @selecion=="cant_postulantes" %>
+           <OPTION VALUE="cant_postulantes"selected>Postulante</OPTION>
+        <%else%>
+           <OPTION VALUE="cant_postulantes">Postulante</OPTION>
+           <%end%>
+        <%if @selecion=="created_at"%> 
+           <OPTION VALUE="created_at"selected>Cronologicamente</OPTION>
+           <%else%>
+             <OPTION VALUE="created_at">Cronologicamente</OPTION>
+           <%end%>
+        </SELECT>
+        <SELECT NAME="opcion" SIZE="1">
+          <%if @order=="ASC" %>
+           <OPTION VALUE="ASC"selected>Ascendente</OPTION> 
+           <%else%>
+            <OPTION VALUE="ASC">Ascendete</OPTION> 
+            <%end%>
+          <%if @order=="DESC"%>
+           <OPTION VALUE="DESC"selected>Descendete</OPTION> 
+           <%else%>
+           <OPTION VALUE="DESC">Descendete</OPTION>
+           <%end%>
+
+        </SELECT> 
+        <input type="hidden" name="searchbox" value="<%=@busqueda%>">
+       
+        <input class="filtrar" TYPE="submit" value="Ordenar">
+       </form>
+
+    <% @gauchadas.each do |gauchada| %>
+    <%if gauchada.fecha_limite > Date.today %>
+            <div class="contenedor_guchada">
+            <h2 class="titulo_gauchadas"><%= gauchada.title %></h2>
+            <div class="imagen_gauchadas">
+            <% if gauchada.cover_file_size.nil? %>
+                    <img src="assets/avatar.png">
+                <% else %>
+                    <%= image_tag gauchada.cover.url('thumb') %>
+                <% end %>
+            </div>
+            <p class="descripcion_gauchadas"><%= gauchada.descripcion %></p>
+            <strong>
+            <br>
+            <p>Postulados: <%= gauchada.cant_postulantes
+             %></p>
+            <p>Categoria: <%= gauchada.category.nombre %> </p>
+            <p>Ciudad: <%= gauchada.ciudad %></p>
+            <p class="fecha_limite_gauchada">Fecha limite: <%= gauchada.fecha_limite %></p></strong>
+            <div class="clear_gauchadas">
+            <%= link_to 'Ver ', gauchada, :class => "link_gauchadas" %>
+            <% if user_signed_in? %>
+                <% if current_user.id == gauchada.user.id %>
+                    <%= link_to 'Editar', edit_gauchada_path(gauchada), :class => "link_gauchadas" %>
+                    <%= link_to 'Eliminar', gauchada, :class => "link_gauchadas", method: :delete, data: { confirm: '¿Estas seguro?' } %>
+                <% else %>
+
+                  <%= link_to 'Postularse', {controller:"postularse", action:"new", id_gauchada: gauchada.id}, :class => "link_gauchadas"%>    
+                <% end %>
+              <%else%>
+                <%= link_to 'Postularse', {controller:"postularse", action:"new", id_gauchada: gauchada.id}, :class => "link_gauchadas"%>    
+              <%end%>
+            
+            <%=  
+           render 'postularse/show'  %>
+            <p class="by_autor" >Por: <a  href="#"><%= gauchada.user.nombre %> <%= gauchada.user.apellido %></a>
+            </p>
+            </div> 
+            </div>
+            <% end %>
+          </article> 
+
+        <br>
+    <% end %>
